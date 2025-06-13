@@ -15,6 +15,8 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{subcaption}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
 
 % Page geometry
 \geometry{
@@ -41,19 +43,61 @@
 
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+
+\sffamily
+
+\begin{center}
+
+\includegraphics[width=0.2\textwidth]{figures/FIB.jpg}
+\hfill
+\includegraphics[width=0.4\textwidth]{figures/UPC.jpg}  
+\\[4cm]
+
+{\Large Universitat Politècnica de Catalunya}\\[0.5cm]
+{\Large Facultad de Informática}\\[0.5cm]
+{\Large Algorithmics for Data Mining (ADM)}\\[2cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Implementation and Analysis of Backpropagation in Neural Networks}\\[0.4cm]
+\HRule \\[1.5cm]
+
+{\Large Albert Vidal Cáceres}\\[0.5cm]
+{\Large Jonàs Salat Torres}\\[0.5cm]
+{\Large Eva Martín López}\\[0.5cm]
+
+\vfill
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
 
 \begin{abstract}
-This paper presents an implementation of backpropagation algorithm for multi-layer perceptrons from scratch. We demonstrate the effectiveness of our implementation through numerical gradient checking and its application to learning logical functions (AND, OR, XOR). The implementation includes a comprehensive analysis of the learning process, decision boundaries, and the network's ability to capture complex relationships in the data.
+This project investigates the implementation of the backpropagation algorithm for multi-layer perceptrons (MLPs) and its application to learning binary logical functions (AND, OR, XOR). We reimplement backpropagation from first principles in Python and validate its correctness through numerical gradient checking. Our experiments focus on analyzing how MLPs learn to represent logical operators, exploring convergence behavior, decision boundaries, and output confidence. The study offers both a functional implementation and a visual and statistical analysis of neural learning on low-dimensional tasks, providing insights into network capacity, training dynamics, and non-linear representation learning. The complete implementation is available as a modular Python package.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
-Neural networks have become a fundamental tool in machine learning, with backpropagation being the cornerstone algorithm for training these networks. This paper focuses on implementing and analyzing backpropagation from scratch, providing insights into the inner workings of neural network training. We explore the mathematical foundations and practical implementation details that make this algorithm work.
+Neural networks have become a central tool in modern machine learning, particularly for problems involving classification, regression, and representation learning. One of the most influential algorithms that made training deep networks possible is backpropagation, which computes gradients efficiently via the chain rule. While the algorithm is widely used in machine learning frameworks, implementing it from scratch provides crucial insights into how neural networks learn and how gradients flow through layers.
+
+In this project, we develop a complete implementation of the backpropagation algorithm for multi-layer perceptrons (MLPs) from first principles using only NumPy. We focus our investigation on a pedagogical but illustrative use case: learning logical functions such as AND, OR, and XOR. These functions differ in complexity—AND and OR are linearly separable, while XOR is not—which allows us to observe the effects of network architecture and training dynamics in both simple and non-linear settings.
+
+We supplement the implementation with numerical gradient checking, a standard verification technique that compares analytically computed gradients with numerical approximations to detect errors in the backward pass. Finally, we analyze the network’s learning behavior using loss curves, prediction tables, and visual decision boundaries. These tools help us interpret what the network has learned and how different logical functions are represented in the weights of the network.
+
+Our work offers a didactic implementation of backpropagation and showcases how small-scale neural networks internalize logical reasoning. The simplicity of the dataset, combined with precise gradient validation and visualizations, makes this project a strong foundation for more advanced neural network applications.
 
 \section{Literature Review}
-\label{sec:literature}
-The development of backpropagation has a rich history in the field of neural networks. From the early work of \cite{rumelhart1986learning} to modern implementations, the algorithm has evolved significantly. We review key papers and implementations that have shaped our understanding of neural network training.
+The backpropagation algorithm, central to training artificial neural networks, was popularized in the seminal paper by Rumelhart, Hinton, and Williams \cite{rumelhart1986learning}, although its mathematical foundations date back to earlier work by Werbos \cite{werbos1974beyond}. Backpropagation allows efficient computation of gradients in layered networks by recursively applying the chain rule, enabling gradient-based optimization of weight parameters.
+
+Multi-layer perceptrons (MLPs), a class of feedforward neural networks, have been widely used in both academic and industrial contexts due to their ability to approximate non-linear functions \cite{HORNIK1989359}. While shallow MLPs can model linearly separable functions like AND and OR, deeper architectures or additional hidden units are required to model non-linear functions such as XOR \cite{minsky1969perceptrons}, which famously illustrated the limitations of single-layer perceptrons.
+
+Modern treatments of neural networks emphasize the role of activation functions, initialization strategies, and numerical stability in training deep models. Glorot and Bengio \cite{pmlr-v9-glorot10a} highlighted how activation function and weight initialization choices affect training convergence, motivating our use of He initialization and sigmoid activations in this work.
+
+Gradient checking, often introduced in deep learning courses and frameworks \cite{ng2017deep}, is a crucial step for validating custom implementations of backpropagation. By numerically approximating gradients using finite differences, one can identify subtle bugs in the analytical gradient computation.
+
+This project aligns with educational practices in computational learning and mirrors simplified implementations discussed in works like Nielsen \cite{nielsen2015neural} and the exercises found in Stanford and DeepLearning.AI materials. By focusing on logic gates as a controlled case study, we build intuition into how networks learn binary functions and explore their representational capabilities.
 
 \section{Methods}
 \label{sec:methods}
@@ -186,25 +230,31 @@ These results validate our implementation of backpropagation and demonstrate its
 
 \section{Conclusions}
 \label{sec:conclusions}
-Summary of key findings and contributions:
+This project demonstrates a from-scratch implementation of backpropagation for training multi-layer perceptrons and its application to learning basic logical functions. Our main findings include:
+
 \begin{itemize}
-    \item Successful implementation of backpropagation
-    \item Verification through gradient checking
-    \item Effective learning of logical functions
-    \item Insights into neural network behavior
+\item The backpropagation implementation passed numerical gradient checking, ensuring the correctness of gradient computations.
+\item The neural network successfully learned the AND, OR, and XOR functions, with loss curves and decision boundaries validating the learning process.
+\item Linearly separable functions (AND, OR) were learned rapidly with shallow networks, while XOR required more hidden units and training time due to its non-linear nature.
+\item Decision boundary visualizations provided interpretable insights into the learned models.
 \end{itemize}
+
+By thoroughly testing the network's behavior on simple logical problems, we gained a better understanding of how architecture choices and training configurations affect convergence and learning capacity. This project serves as a robust educational example of implementing and analyzing neural networks from scratch.
 
 \section{Future Work}
 \label{sec:future}
-Potential areas for improvement and extension:
+Several directions can extend the scope and impact of this project:
+
 \begin{itemize}
-    \item Implementation of additional activation functions
-    \item Support for more complex architectures
-    \item Optimization techniques
-    \item Applications to real-world problems
+\item \textbf{Activation functions}: Incorporate other non-linearities such as ReLU or tanh to study their effects on training dynamics and convergence.
+\item \textbf{Architecture scaling}: Extend the framework to support deeper or wider networks, including dropout and batch normalization layers.
+\item \textbf{Real-world datasets}: Apply the backpropagation implementation to slightly more complex datasets such as MNIST or Iris to assess generalization and scalability.
+\item \textbf{Visualization tools}: Create interactive tools for visualizing weight evolution and gradient flow to aid in educational settings.
 \end{itemize}
 
-\bibliographystyle{plain}
+By enhancing the network architecture, optimization methods, and dataset complexity, this foundational project can evolve into a more general framework for experimental deep learning research and education.
+
+\bibliographystyle{ieeetr}
 \bibliography{references}
 
 \end{document} 

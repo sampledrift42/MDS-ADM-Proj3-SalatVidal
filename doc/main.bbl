@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+
+\bibitem{rumelhart1986learning}
+D.~E. Rumelhart, G.~E. Hinton, and R.~J. Williams, ``Learning representations
+  by back-propagating errors,'' {\em Nature}, vol.~323, pp.~533--536, 1986.
+
+\bibitem{werbos1974beyond}
+P.~J. Werbos, {\em Beyond regression: New tools for prediction and analysis in
+  the behavioral sciences}.
+\newblock PhD thesis, Harvard University, 1974.
+
+\bibitem{HORNIK1989359}
+K.~Hornik, M.~Stinchcombe, and H.~White, ``Multilayer feedforward networks are
+  universal approximators,'' {\em Neural Networks}, vol.~2, no.~5,
+  pp.~359--366, 1989.
+
+\bibitem{minsky1969perceptrons}
+M.~Minsky and S.~Papert, {\em Perceptrons: An Introduction to Computational
+  Geometry}.
+\newblock MIT Press, 1969.
+
+\bibitem{pmlr-v9-glorot10a}
+X.~Glorot and Y.~Bengio, ``Understanding the difficulty of training deep
+  feedforward neural networks,'' in {\em Proceedings of the Thirteenth
+  International Conference on Artificial Intelligence and Statistics} (Y.~W.
+  Teh and M.~Titterington, eds.), vol.~9 of {\em Proceedings of Machine
+  Learning Research}, (Chia Laguna Resort, Sardinia, Italy), pp.~249--256,
+  PMLR, 13--15 May 2010.
+
+\bibitem{ng2017deep}
+A.~Ng, ``Deep learning specialization,'' {\em Internet: https://www. coursera.
+  org/specializations/deep-learning}, 2017.
+
+\bibitem{nielsen2015neural}
+M.~Nielsen, {\em Neural Networks and Deep Learning}.
+\newblock Determination Press, 2015.
+\newblock http://neuralnetworksanddeeplearning.com.
+
+\end{thebibliography}
