@@ -3,9 +3,9 @@
 \contentsline {section}{\numberline {3}Methods}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Neural Network Architecture}{3}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Backpropagation Implementation}{3}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Gradient Checking}{4}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Gradient Checking}{3}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Training Process}{4}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Results}{4}{section.4}%
 \contentsline {section}{\numberline {5}Interpretation and Discussions}{7}{section.5}%
-\contentsline {section}{\numberline {6}Conclusions}{8}{section.6}%
+\contentsline {section}{\numberline {6}Conclusions}{7}{section.6}%
 \contentsline {section}{\numberline {7}Future Work}{8}{section.7}%
