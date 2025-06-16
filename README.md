@@ -81,8 +81,4 @@ The project includes a comprehensive analysis of the network's performance on lo
 - Detailed prediction tables
 - Performance analysis and interpretation
 
-The analysis is documented in the LaTeX document (`doc/main.tex`) and includes generated figures and tables in the `doc/img/` and `doc/tab/` directories.
-
-## Development
-
-This project is actively maintained. Feel free to submit issues or pull requests for improvements.
+The analysis is documented in the LaTeX document (`doc/main.tex`) and includes generated figures and tables in the `doc/img/` and `doc/tab/` directories. Use `pdflatex` to compile it to .pdf, or use the included Makefile (simply type `make`). 
